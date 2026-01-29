@@ -13,11 +13,7 @@
         accent_a_macro: accent_a_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RALT &kp E>,
-                <&macro_tap>,
-                <&macro_release>;
+            bindings = <&macro_press>, <&kp RALT &kp E>;
 
             label = "ACCENT_A_MACRO";
         };
