@@ -30,7 +30,7 @@
 
         accent_a_combo {
             bindings = <&accent_a_macro>;
-            key-positions = <13 40>;
+            key-positions = <13 22>;
         };
     };
 };
