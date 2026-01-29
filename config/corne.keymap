@@ -9,24 +9,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    macros {
-        accent_a_macro: accent_a_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp RALT &kp E>;
-
-            label = "ACCENT_A_MACRO";
-        };
-    };
-
-    combos {
-        compatible = "zmk,combos";
-
-        accent_a_combo {
-            bindings = <&accent_a_macro>;
-            key-positions = <22 13>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 };
 
 / {
