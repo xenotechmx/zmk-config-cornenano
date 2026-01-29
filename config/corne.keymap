@@ -15,11 +15,10 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp RALT &kp RSHFT>,
+                <&kp RALT &kp E>,
                 <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N5>,
-                <&macro_release>,
-                <&kp RSHFT &kp RALT>;
+                <&kp A>,
+                <&macro_release>;
 
             label = "ACCENT_A_MACRO";
         };
@@ -30,7 +29,7 @@
 
         accent_a_combo {
             bindings = <&accent_a_macro>;
-            key-positions = <13 22>;
+            key-positions = <22 13>;
         };
     };
 };
