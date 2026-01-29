@@ -17,7 +17,6 @@
                 <&macro_press>,
                 <&kp RALT &kp E>,
                 <&macro_tap>,
-                <&kp A>,
                 <&macro_release>;
 
             label = "ACCENT_A_MACRO";
