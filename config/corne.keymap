@@ -40,11 +40,6 @@
             bindings = <&arrow_macro>;
             key-positions = <13 39>;
         };
-
-        hello_combo {
-            bindings = <&hello_macro>;
-            key-positions = <18 39>;
-        };
     };
 };
 
