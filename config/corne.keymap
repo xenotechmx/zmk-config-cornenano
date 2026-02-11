@@ -73,7 +73,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&kp LS(H) &kp O &kp L &kp A &kp SPACE &kp A &kp SPACE &kp T &kp O &kp D &kp O &kp S &kp RET &kp RET &kp RET &kp RET &kp LS(S) &kp A &kp L &kp U &kp D &kp O &kp S &kp EXCL &kp EXCL &kp UP_ARROW &kp UP_ARROW>;
+                <&kp H &kp O &kp L &kp A &kp SPACE &kp A &kp SPACE &kp T &kp O &kp D &kp O &kp S &kp RET &kp RET &kp RET &kp RET &kp LS(S) &kp A &kp L &kp U &kp D &kp O &kp S &kp EXCL &kp EXCL &kp UP_ARROW &kp UP_ARROW>;
 
             label = "HELLO_MACRO";
         };
