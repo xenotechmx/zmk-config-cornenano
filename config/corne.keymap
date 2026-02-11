@@ -35,6 +35,11 @@
             bindings = <&function_macro>;
             key-positions = <16 39>;
         };
+
+        arrow_combo {
+            bindings = <&arrow_macro>;
+            key-positions = <13 39>;
+        };
     };
 };
 
@@ -45,9 +50,27 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&kp F &kp U &kp N &kp C &kp T &kp I &kp O &kp N &kp SPACE &kp LPAR &kp SPACE &kp RPAR &kp SPACE &kp LBRC &kp RET &kp RET &kp RBRC>;
+                <&kp F &kp U &kp N &kp C &kp T &kp I &kp O &kp N &kp SPACE &kp LPAR &kp SPACE &kp RPAR &kp SPACE &kp LBRC &kp RIGHT_BRACE &kp LEFT &kp ENTER>;
 
             label = "FUNCTION_MACRO";
+        };
+
+        arrow_macro: arrow_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp EQUAL &kp GT &kp SPACE>;
+
+            label = "ARROW_MACRO";
+        };
+
+        hello_macro: hello_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp LS(H) &kp O &kp L &kp A &kp SPACE &kp A &kp SPACE &kp T &kp O &kp D &kp O &kp S &kp RET &kp RET &kp RET &kp RET &kp LS(S) &kp A &kp L &kp U &kp D &kp O &kp S &kp EXCL &kp EXCL &kp UP_ARROW &kp UP_ARROW>;
+
+            label = "HELLO_MACRO";
         };
     };
 
