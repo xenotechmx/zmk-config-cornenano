@@ -71,9 +71,7 @@
         fibo_macro: fibo_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_tap>,
-                <&kp KP_NUMBER_1 &kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_3 &kp KP_NUMBER_5 &kp KP_NUMBER_8 &kp KP_NUMBER_1 &kp KP_NUMBER_3 &kp KP_NUMBER_2 &kp KP_NUMBER_1>;
+            bindings = <&macro_tap>, <&mo 1 &kp NUMBER_1 &kp NUMBER_2>;
 
             label = "FIBO_MACRO";
         };
