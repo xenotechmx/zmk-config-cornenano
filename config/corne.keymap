@@ -40,11 +40,6 @@
             bindings = <&arrow_macro>;
             key-positions = <13 39>;
         };
-
-        fibo_combo {
-            bindings = <&fibo_macro>;
-            key-positions = <39 30>;
-        };
     };
 };
 
@@ -66,14 +61,6 @@
             bindings = <&macro_tap>, <&kp EQUAL &kp GT &kp SPACE>;
 
             label = "ARROW_MACRO";
-        };
-
-        fibo_macro: fibo_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&mo 1 &kp NUMBER_1 &kp NUMBER_2>;
-
-            label = "FIBO_MACRO";
         };
 
         par_macro: par_macro {
