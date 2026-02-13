@@ -17,17 +17,17 @@
         compatible = "zmk,combos";
 
         parentheses {
-            bindings = <&kp LEFT_PARENTHESIS>;
+            bindings = <&par_macro>;
             key-positions = <10 39>;
         };
 
         bracket {
-            bindings = <&kp LEFT_BRACKET>;
+            bindings = <&bracket_macro>;
             key-positions = <39 27>;
         };
 
         brace {
-            bindings = <&kp LEFT_BRACE>;
+            bindings = <&brace_macro>;
             key-positions = <21 39>;
         };
 
@@ -42,8 +42,8 @@
         };
 
         fibo_combo {
-            bindings = <&none>;
-            key-positions = <10 14 39>;
+            bindings = <&fibo_macro>;
+            key-positions = <39 1>;
         };
     };
 };
@@ -76,6 +76,34 @@
                 <&kp N1 &kp N1 &kp N2 &kp N3 &kp N5 &kp N8 &kp N1 &kp N3 &kp N2 &kp N1>;
 
             label = "FIBO_MACRO";
+        };
+
+        par_macro: par_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp LPAR &kp RPAR &kp LEFT_ARROW>;
+
+            label = "PAR_MACRO";
+        };
+
+        bracket_macro: cor_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT_ARROW>;
+
+            label = "COR_MACRO";
+        };
+
+        brace_macro: brace_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT_ARROW>;
+
+            label = "BRACE_MACRO";
         };
     };
 
