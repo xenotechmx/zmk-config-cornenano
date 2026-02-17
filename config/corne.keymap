@@ -42,7 +42,7 @@
         };
 
         try_catch_combo {
-            bindings = <&none>;
+            bindings = <&try_catch_macro>;
             key-positions = <5 39>;
         };
     };
