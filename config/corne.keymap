@@ -44,6 +44,8 @@
         try_catch_combo {
             bindings = <&try_catch_macro>;
             key-positions = <5 39>;
+            timeout-ms = <150>;
+            slow-release;
         };
 
         accent_combo {
