@@ -42,9 +42,8 @@
         };
 
         try_catch_combo {
-            bindings = <&try_catch_macro>;
+            bindings = <&none>;
             key-positions = <5 39>;
-            timeout-ms = <150>;
         };
     };
 };
