@@ -135,13 +135,19 @@
             #binding-cells = <0>;
             bindings = <&macro_tap>, <&kp RA(E) &kp U>;
         };
+
+        n_tilde_macro: n_tilde_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp SEMI>;
+        };
     };
 
     behaviors {
         td_a_acute: td_a_acute {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <175>;
+            tapping-term-ms = <225>;
             bindings = <&kp A>, <&a_acute_macro>;
         };
 
@@ -172,6 +178,13 @@
             tapping-term-ms = <175>;
             bindings = <&kp U>, <&u_acute_macro>;
         };
+
+        td_n_tilde: td_n_tilde {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <175>;
+            bindings = <&kp N>, <&n_tilde_macro>;
+        };
     };
 
     keymap {
@@ -187,7 +200,7 @@
             bindings = <
 &kp TAB    &kp Q  &kp W  &td_e_acute  &kp R  &kp T        &kp Y    &td_u_acute  &td_i_acute  &td_o_acute  &kp P     &kp BACKSPACE
 &kp LCTRL  &td_a_acute  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &td_n_tilde  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
                          &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
             >;
         };
