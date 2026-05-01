@@ -139,7 +139,7 @@
         n_tilde_macro: n_tilde_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp SEMI>;
+            bindings = <&macro_tap>, <&kp RA(N) &kp N>;
         };
     };
 
