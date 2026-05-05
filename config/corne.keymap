@@ -106,84 +106,46 @@
             label = "TRY_CATCH_MACRO";
         };
 
-        a_acute_macro: a_acute_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp RA(E) &kp A>;
+        acute: acute {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings
+                = <&macro_tap &kp RA(E)>
+                , <&macro_param_1to1>
+                , <&macro_tap &kp MACRO_PLACEHOLDER>
+                ;
         };
 
-        e_acute_macro: e_acute_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp RA(E) &kp E>;
-        };
-
-        i_acute_macro: i_acute_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp RA(E) &kp I>;
-        };
-
-        o_acute_macro: o_acute_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp RA(E) &kp O>;
-        };
-
-        u_acute_macro: u_acute_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp RA(E) &kp U>;
-        };
-
-        n_tilde_macro: n_tilde_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp RA(N) &kp N>;
+        tilde: tilde {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings
+                = <&macro_tap &kp RA(N)>
+                , <&macro_param_1to1>
+                , <&macro_tap &kp MACRO_PLACEHOLDER>
+                ;
         };
     };
 
     behaviors {
-        td_a_acute: td_a_acute {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <225>;
-            bindings = <&kp A>, <&a_acute_macro>;
+        // Hold-tap: tap = letter (instant), hold 200ms = accented letter.
+        // tap-preferred + quick-tap-ms keeps fast typing & Cmd+letter combos working.
+        ht_acute: ht_acute {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            flavor = "tap-preferred";
+            bindings = <&acute>, <&kp>;
         };
 
-        td_e_acute: td_e_acute {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <175>;
-            bindings = <&kp E>, <&e_acute_macro>;
-        };
-
-        td_i_acute: td_i_acute {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <175>;
-            bindings = <&kp I>, <&i_acute_macro>;
-        };
-
-        td_o_acute: td_o_acute {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <175>;
-            bindings = <&kp O>, <&o_acute_macro>;
-        };
-
-        td_u_acute: td_u_acute {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <175>;
-            bindings = <&kp U>, <&u_acute_macro>;
-        };
-
-        td_n_tilde: td_n_tilde {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <175>;
-            bindings = <&kp N>, <&n_tilde_macro>;
+        ht_tilde: ht_tilde {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            flavor = "tap-preferred";
+            bindings = <&tilde>, <&kp>;
         };
     };
 
@@ -198,9 +160,9 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &td_e_acute  &kp R  &kp T        &kp Y    &td_u_acute  &td_i_acute  &td_o_acute  &kp P     &kp BACKSPACE
-&kp LCTRL  &td_a_acute  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &td_n_tilde  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+&kp TAB    &kp Q          &kp W  &ht_acute E E  &kp R  &kp T        &kp Y          &ht_acute U U  &ht_acute I I  &ht_acute O O  &kp P     &kp BACKSPACE
+&kp LCTRL  &ht_acute A A  &kp S  &kp D          &kp F  &kp G        &kp H          &kp J          &kp K          &kp L          &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z          &kp X  &kp C          &kp V  &kp B        &ht_tilde N N  &kp M          &kp COMMA      &kp DOT        &kp FSLH  &kp ESC
                          &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
             >;
         };
